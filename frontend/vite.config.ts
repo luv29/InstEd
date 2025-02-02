@@ -16,7 +16,7 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      '/api': `http://localhost:${process.env.BACKEND_PORT}`
+      '/api': `http://localhost:${process.env.VITE_BACKEND_PORT}`
     },
   },
   resolve: {
