@@ -4,11 +4,11 @@ import instagram from "../assets/images/instagram_icon.png";
 import facebook from "../assets/images/facebook_icon.png";
 import linkedin from "../assets/images/linkedin_icon.png";
 import twitter from "../assets/images/twitter_icon.png";
-import {Navbar} from "../components"
+
 export default function HomePage() {
   return (
     <div className='gradient bg-gradient-to-l to-[#FF1F01] from-[#FFC700] w-screen h-screen'>
-      <Navbar/>
+
       <div className='flex items-center w-screen h-[73vh] pl-60 pt-8 gap-x-52 flex-wrap'>
         <div className='flex size-fit flex-col w-2xs'>
           <p className='text-[#FFFFFF] text-8xl font-chunkfive leading-20 mb-6'>SOLVE.<br/>POST.<br/>EARN.<br/>RISE.</p>

@@ -2,16 +2,31 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import MainLayout from "./layout/MainLayout.jsx"
 import {
   HomePage,
-  Chatroom
+  Chatroom,
+  Community,
+  About,
+  Leaderboard,
+  Contactus,
+  SignIn,
+  SignUp
 } from './pages'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path='/' element={<HomePage />} />
-      <Route path='/chat' element={<Chatroom />} />
+      <Route path='/' element={<MainLayout />} >
+        <Route path='/' element={<HomePage />} />
+        <Route path='/chat' element={<Chatroom />} />
+        <Route path='/community' element={<Community />} />
+        <Route path='/about-us' element={<About />} />
+        <Route path='/leaderboard' element={<Leaderboard />} />
+        <Route path='/contact-us' element={<Contactus />} />
+        <Route path='/signin' element={<SignIn />} />
+        <Route path='/signup' element={<SignUp />} />
+      </Route>
     </>
   )
 )
