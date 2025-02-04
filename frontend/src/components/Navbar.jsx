@@ -6,7 +6,7 @@ function Navbar() {
 
   const navigate = useNavigate();
 
-  const navItems=[
+  const navItems = [
     {
       name: 'COMMUNITY',
       slug: '/community',
@@ -28,15 +28,15 @@ function Navbar() {
       active: true,
     },
   ]
-  const rightNavItems=[
+  const rightNavItems = [
     {
-      className:"border-[#FF1F01] border-2 text-black px-4 py-2 rounded-full text-sm font-yatra",
+      className: "border-[#FF1F01] border-2 text-black px-4 py-2 rounded-full text-sm font-yatra",
       name: 'SIGN IN',
       slug: '/signin',
       active: true,
     },
     {
-      className:"bg-[#FF1F01] border-2 border-[#FFFFFFE0] text-black px-4 py-2 rounded-full text-sm font-yatra flex",
+      className: "bg-[#FF1F01] border-2 border-[#FFFFFFE0] text-black px-4 py-2 rounded-full text-sm font-yatra flex",
       name: 'SIGN UP',
       slug: '/signup',
       active: true,
@@ -48,35 +48,35 @@ function Navbar() {
   return (
     <nav className="relative bg-[#FFFFFFE0] border-b border-black">
       <div className="container mx-auto flex justify-between items-center px-6 py-3">
-      
+
         <ul className="hidden lg:flex gap-6">
           <li><Link to="/" className="text-xl font-chunkfive">InstEd</Link></li>
           {navItems.map((item) =>
-                            item.active ? (
-                                <li key={item.name}>
-                                    <Link
-                                        to={item.slug}
-                                        className="text-sm font-yatra"
-                                    >
-                                        {item.name}
-                                    </Link>
-                                </li>
-                            ) : null
-                            )}
+            item.active ? (
+              <li key={item.name}>
+                <Link
+                  to={item.slug}
+                  className="text-sm font-yatra"
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ) : null
+          )}
         </ul>
 
         <div className="hidden lg:flex gap-4">
           {rightNavItems.map((item) =>
-                            item.active ? (
-                                  <Link
-                                      key={item.name}
-                                      to={item.slug}
-                                      className={item.className}
-                                  >
-                                      {item.name}
-                                  </Link>
-                            ) : null
-                            )}
+            item.active ? (
+              <Link
+                key={item.name}
+                to={item.slug}
+                className={item.className}
+              >
+                {item.name}
+              </Link>
+            ) : null
+          )}
         </div>
       </div>
     </nav>
