@@ -1,43 +1,40 @@
-/* @import "tailwindcss";
-@font-face {
-    font-family: 'CustomFont';
-    src: url('./assets/fonts/Chunkfive.otf') format('chunk5'),
-         url('./assets/fonts/Yatra_One/YatraOne-Regular.ttf') format('yatra1');
-    font-weight: normal;
-    font-style: normal;
-  }
-  .yatra-one-regular {
-     font-family: "Yatra One", serif;
-     font-weight: 400;
-     font-style: normal;
-   }
-   .aryan{
-    font-family:serif;
-   }
-    */
     @import "tailwindcss";
 
     @font-face {
         font-family: 'Chunkfive';
-        src: url('./assets/fonts/Chunkfive.otf') format('opentype'); /* OTF format */
-    }
-    
+        src: url('./assets/fonts/Chunkfive.otf') format('opentype');
+    }    
     @font-face {
         font-family: 'Yatra One';
-        src: url('./assets/fonts/Yatra_One/YatraOne-Regular.ttf') format('truetype'); /* TTF format */
+        src: url('./assets/fonts/Yatra_One/YatraOne-Regular.ttf') format('truetype');
     }
-    
-    /* .yatra-one-regular {
-        font-family: "Yatra One", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-    } */
-
+    @font-face {
+      font-family: 'Work Sans';
+      src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Outfit';
+      src: url('./assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Poppins';
+      src: url('./assets/fonts/Poppins-Regular.ttf') format('truetype');
+    }
     .font-chunkfive {
       font-family: 'Chunkfive', serif;
     }
 
     .font-yatra {
       font-family: 'Yatra One', sans-serif;
+    }
+
+    .font-worksans {
+      font-family: 'Work Sans',sans-serif;
+    }
+    .font-outfit {
+      font-family: 'Outfit',sans-serif;
+    }
+    .font-poppins {
+      font-family: 'Poppins',sans-serif;
     }
     

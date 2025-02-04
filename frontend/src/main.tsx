@@ -3,6 +3,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import MainLayout from "./layout/MainLayout.jsx"
+import RegisterLayout from "./layout/RegisterLayout.jsx"
 import {
   HomePage,
   Chatroom,
@@ -11,7 +12,9 @@ import {
   Leaderboard,
   Contactus,
   SignIn,
-  SignUp
+  SignUp,
+  SignupOtp,
+  SignUpInterests
 } from './pages'
 
 const router = createBrowserRouter(
@@ -19,13 +22,19 @@ const router = createBrowserRouter(
     <>
       <Route path='/' element={<MainLayout />} >
         <Route path='/' element={<HomePage />} />
+
+        <Route path='/signup' element={<RegisterLayout />} >
+          <Route path='' element={<SignUp />} />
+          <Route path='otp' element={<SignupOtp />} />
+          <Route path='interests' element={<SignUpInterests />} />
+        </Route>
+
         <Route path='/chat' element={<Chatroom />} />
         <Route path='/community' element={<Community />} />
         <Route path='/about-us' element={<About />} />
         <Route path='/leaderboard' element={<Leaderboard />} />
         <Route path='/contact-us' element={<Contactus />} />
         <Route path='/signin' element={<SignIn />} />
-        <Route path='/signup' element={<SignUp />} />
       </Route>
     </>
   )
