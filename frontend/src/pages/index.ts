@@ -6,6 +6,8 @@ import Leaderboard from "./Leaderboard.jsx";
 import Contactus from "./Contactus.jsx";
 import SignIn from "./SignIn.jsx";
 import SignUp from "./SignUp.jsx";
+import SignupOtp from "./SignupOtp.jsx";
+import SignUpInterests from "./SignUpInterests.jsx";
 
 export {
     HomePage,
@@ -15,5 +17,7 @@ export {
     Leaderboard,
     Contactus,
     SignIn,
-    SignUp
+    SignUp,
+    SignupOtp,
+    SignUpInterests
 }
