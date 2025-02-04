@@ -5,12 +5,12 @@ import { Navbar } from "@/components"
 export default function MainLayout() {
   return (
     <>
-    <div >
-            <Navbar />
-            <main className="flex-grow w-full">
-                <Outlet />
-            </main>
-        </div>
+      <div >
+        <Navbar />
+        <main className="flex-grow w-full">
+          <Outlet />
+        </main>
+      </div>
     </>
   )
 }
