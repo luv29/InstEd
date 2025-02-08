@@ -6,7 +6,11 @@ export const verifyUser = createAsyncThunk("auth/verifyUser", async () => {
     const response = await axios.get(`/api/user/verify-user`, {
       withCredentials: true, 
     });
-    return response.data.data;
+    if(response.data.success) {
+      return response.data.data;
+    } else {
+      return null
+    }
   } catch (error) {
     console.log(error)
     return null; 

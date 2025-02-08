@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 function Navbar() {
 
   const user = useSelector((state) => state.auth.user);
+  console.log(user)
 
   const navigate = useNavigate();
 

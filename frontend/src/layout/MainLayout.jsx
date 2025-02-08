@@ -14,7 +14,7 @@ export default function MainLayout() {
 
   return (
     <main className="w-screen max-w-screen">
-      <Navbar />
+      {/* <Navbar /> */}
       <Outlet />
     </main>
   )
