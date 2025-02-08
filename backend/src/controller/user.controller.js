@@ -9,19 +9,17 @@ export const signUp = asyncHandler(async (req, res) => {
   const {firstname, lastname, phoneNumber, password} = req.body;
 
   if(!firstname || !lastname || !phoneNumber || !password) {
-    res.status(400)
-    throw new Error('Please add all fields')
+    res.json(new ApiResponse(400, "Please add all fields"));
   }
-
+  
   let userExists = await User.findOne({phoneNumber})
   const verifyCode = Math.floor(100000 + Math.random()*900000).toString()
   const expiryDate = new Date()
   expiryDate.setHours(expiryDate.getHours() + 1)
-
+  
   if(userExists) {
     if(userExists.isVerified) {
-      res.status(400)
-      throw new Error('User already exists')
+      res.json(new ApiResponse(400, "User already exists"));
     }
     else {
       const hashedPassword = await bcrypt.hash(password, 10)
@@ -44,35 +42,34 @@ export const signUp = asyncHandler(async (req, res) => {
       verifyCode,
       verifyCodeExpiry: expiryDate
     })
-  
+    
     if (!user) {
-      res.staus(400)
-      throw new Error('Invalid user data')
+      res.json(new ApiResponse(400, "Invalid user data"));
     }
     userExists = user
   }
-
+  
   sendMessage(phoneNumber, `The verification code to create your InstED account is ${verifyCode}. If you did not registered, ignore this message.`)
-
+  
   const token = generateToken(userExists._id, '1h')
   
   const options = {
     httpOnly: true,
     secure: true
   }
-
+  
   return res
-    .status(201)
-    .cookie("token", token, options)
-    .json(new ApiResponse(201, "User Registered Successfully. Please verify your phone number", userExists))
+  .status(201)
+  .cookie("token", token, options)
+  .json(new ApiResponse(201, "User Registered Successfully. Please verify your phone number", userExists))
 })
 
 export const signUpVerifyOTP = asyncHandler(async (req, res) => {
-    try {
-      const { otp } = req.body;
-      const user = req.user
-  
-      if (!user) {
+  try {
+    const { otp } = req.body;
+    const user = req.user
+    
+    if (!user) {
         res.status(401)
         throw new Error("Unauthorized request")
       }

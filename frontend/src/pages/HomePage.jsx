@@ -11,6 +11,7 @@ import different4 from "../assets/images/different4.jpg";
 import group from "../assets/images/group.png";
 import rectangle from "../assets/images/Rectangle 107.png";
 import twitter from "../assets/images/twitter_icon.png";
+import community from "../assets/images/community.png";
 import wave1 from "../assets/images/wave1.png";
 import wave2 from "../assets/images/wave2.png";
 
@@ -124,14 +125,18 @@ We’ve combined the best aspects of social networking, gamification, and real-t
       <div className='w-screen gradient bg-gradient-to-l to-[#FF1F01] from-[#FFC700]'>
         <img src={rectangle} className='w-200'/>
       </div>
-      <div className='w-screen h-screen gradient bg-white flex'>
-        <div>
-          <p className='font-outfit text-xl text-[#666666]'>Community</p>
+      <div className='w-screen h-[89vh] gradient bg-white flex justify-center items-center px-8'>
+        <div className='w-[50%] p-8 flex flex-col justify-center items-center gap-5 '>
+          <p className='font-outfit text-7xl text-[#666666] self-start'>Community</p>
+          <p className='font-outfit text-7xl text-[#474343] font-semibold self-start'>FOR LEARNERS</p>
+          <p className='font-outfit text-base text-[#474343] text-justify'>At InstEd, our community is the heart of the learning experience. Here, knowledge isn’t just shared it’s celebrated. Connect with like-minded learners, engage in real-time discussions, and collaborate to solve doubts together. Whether you're seeking help, offering guidance, or climbing the leaderboards, every contribution makes our community stronger. Join us in building a supportive and dynamic space where learning never stops! </p>
+          <div className='self-start'><button className='font-outfit text-base text-[#000000] border-[0.5px] border-[#000000]  px-4 py-1 rounded-full flex hover:bg-[#000000] hover:border-[0.5px] hover:text-[#FFFFFF] hover:border-[#000000] transition duration-200 transition-discrete ease-in-out'>Explore</button></div>
         </div>
-        <div>
-          
+        <div className='w-[50%]'>
+          <img src={community} className=''/>
         </div>
       </div>
+      <div></div>
     </div>
   );
 }
