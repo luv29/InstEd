@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Chunkfive';
+    src: url('./assets/fonts/Chunkfive.otf') format('opentype');
+}    
+@font-face {
+    font-family: 'Yatra One';
+    src: url('./assets/fonts/Yatra_One/YatraOne-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Work Sans';
+  src: url('./assets/fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('./assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Regular.ttf') format('truetype');
+}
+  @font-face {
+  font-family: 'Leaguegothic';
+  src: url('./assets/fonts/LeagueGothic-Regular-VariableFont_wdth.ttf') format('truetype');
+}
+.font-chunkfive {
+  font-family: 'Chunkfive', serif;
+}
+
+.font-yatra {
+  font-family: 'Yatra One', sans-serif;
+}
+
+.font-worksans {
+  font-family: 'Work Sans',sans-serif;
+}
+.font-outfit {
+  font-family: 'Outfit',sans-serif;
+}
+.font-poppins {
+  font-family: 'Poppins',sans-serif;
+}
+.font-lgothic {
+  font-family: 'Leaguegothic',sans-serif;
+}
