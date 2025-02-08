@@ -8,6 +8,8 @@ import different1 from "../assets/images/different1.jpeg";
 import different2 from "../assets/images/different2.jpeg";
 import different3 from "../assets/images/different3.jpg";
 import different4 from "../assets/images/different4.jpg";
+import group from "../assets/images/group.png";
+import rectangle from "../assets/images/Rectangle 107.png";
 import twitter from "../assets/images/twitter_icon.png";
 import wave1 from "../assets/images/wave1.png";
 import wave2 from "../assets/images/wave2.png";
@@ -34,7 +36,6 @@ export default function HomePage() {
       </div>
 
       <div className='w-screen h-screen gradient bg-gradient-to-l to-[#FF1F01] from-[#FFC700] flex flex-col relative'>
-
         <div className='absolute'>
           <img src={wave2} className='top-0 w-screen' />
           <div className='w-screen h-[53vh] bg-white '></div>
@@ -57,8 +58,7 @@ export default function HomePage() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           viewport={{ once: true }}
         >
-          {[
-            { img: different1, text: "DOUBT SOLVING ARENA" },
+          {[{ img: different1, text: "DOUBT SOLVING ARENA" },
             { img: different2, text: "COMMUNITY LIKE NO OTHER" },
             { img: different3, text: "NEW GENERATION RANKING SYSTEM" },
             { img: different4, text: "GAMIFIED APPROACH TO LEARNING" }
@@ -77,6 +77,55 @@ export default function HomePage() {
             </motion.div>
           ))}
         </motion.div>
+      </div>
+
+      <div className='w-screen h-screen gradient bg-gradient-to-l to-[#FF1F01] from-[#FFC700] pt-4 flex flex-col items-center px-19 gap-7'>
+        <motion.p 
+          className='font-lgothic text-7xl'
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >ABOUT US</motion.p>
+        <div className='flex w-full gap-20'>
+          <motion.div 
+            className='font-outfit text-xl text-[#FFFFFF] w-[50%] font-semibold text-justify'
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            At InstEd, we believe that learning thrives when it’s collaborative, engaging, and rewarding. Our platform is built to transform the way students and educators interact, making doubt-solving a dynamic and enriching experience. Whether you're struggling with a complex concept or eager to help others by sharing your knowledge, our community-driven approach ensures that every question finds an answer.
+<br/> <br/>
+We’ve combined the best aspects of social networking, gamification, and real-time collaboration to create an interactive learning space. Users can post academic doubts, solve them for others, and earn recognition through a structured tier system. As you contribute, you level up, unlocking exclusive achievements and ranking higher on leaderboards.
+
+          </motion.div>
+          <motion.div 
+            className='w-[39%]'
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <img src={group}/>
+          </motion.div>
+        </div>
+        <motion.p 
+          className='font-outfit text-xl text-[#FFFFFF] font-semibold text-justify'
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
+          But learning isn’t just about competition—it’s about connection. Our platform fosters meaningful interactions through personalized profiles, chat rooms, and a mentorship system, allowing users to build networks, follow experts, and track their progress.<br/><br/>
+          Whether you’re a curious seeker, an aspiring scholar, or a seasoned mentor, InstEd is designed to support and celebrate your growth. Join us in making knowledge more accessible, collaborative, and fun! 
+        </motion.p>
+      </div>
+      <div className='w-screen gradient bg-gradient-to-l to-[#FF1F01] from-[#FFC700]'>
+        <img src={rectangle} className='w-200'/>
+      </div>
+      <div className='w-screen h-screen gradient bg-white'>
+
       </div>
     </div>
   );
