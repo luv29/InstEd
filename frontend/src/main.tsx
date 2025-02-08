@@ -9,7 +9,6 @@ import {
   HomePage,
   Chatroom,
   Community,
-  About,
   Leaderboard,
   Contactus,
   SignIn,
@@ -18,6 +17,8 @@ import {
   SignUpInterests,
   ProfilePage
 } from './pages'
+import { Provider } from "react-redux";
+import store from './store'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,7 +36,6 @@ const router = createBrowserRouter(
 
         <Route path='/chat' element={<Chatroom />} />
         <Route path='/community' element={<Community />} />
-        <Route path='/about-us' element={<About />} />
         <Route path='/leaderboard' element={<Leaderboard />} />
         <Route path='/contact-us' element={<Contactus />} />
         <Route path='/signin' element={<SignIn />} />
@@ -45,8 +45,10 @@ const router = createBrowserRouter(
 )
 
 createRoot(document.getElementById('root')!).render(
-  <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
-    <RouterProvider router={router} />
-    <Toaster />
-  </GoogleOAuthProvider>
+  <Provider store={store} >
+    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+      <RouterProvider router={router} />
+      <Toaster />
+    </GoogleOAuthProvider>
+  </Provider>
 )
