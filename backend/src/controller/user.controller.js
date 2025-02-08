@@ -364,3 +364,41 @@ export const signOut = asyncHandler(async (req, res) => {
     .clearCookie("token", options)
     .json(new ApiResponse(200, "User Logged Out"))
 })
+
+import { OAuth2Client } from 'google-auth-library';
+import { fetchUserInfo, getOrCreateGoogleUser } from '../utils/googleAuth.js';
+
+const googleClient = new OAuth2Client(process.env.VITE_GOOGLE_CLIENT_ID)
+
+export const googleCallback = asyncHandler(async (req, res) => {
+  const {token} = req.body;
+
+  console.log(token)
+  
+  try {
+    const userInfo = await fetchUserInfo(token)
+
+    const { email, given_name, family_name } = userInfo
+
+    const user = await getOrCreateGoogleUser(email, given_name, family_name);
+
+    if (user && user.isVerified) {
+      const token = generateToken(user._id)
+
+      const options = {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none"
+      }
+      return res
+        .cookie("token", token, options)
+        .status(201)
+        .json(new ApiResponse(201, "Google User logged in successfully.", user))
+    } else {
+      res.status(501)
+      throw new Error('Error Authenticating Google profile')
+    }
+  } catch (error) {
+    throw new Error(error);
+  }
+})
