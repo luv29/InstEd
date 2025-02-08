@@ -124,8 +124,13 @@ We’ve combined the best aspects of social networking, gamification, and real-t
       <div className='w-screen gradient bg-gradient-to-l to-[#FF1F01] from-[#FFC700]'>
         <img src={rectangle} className='w-200'/>
       </div>
-      <div className='w-screen h-screen gradient bg-white'>
-
+      <div className='w-screen h-screen gradient bg-white flex'>
+        <div>
+          <p className='font-outfit text-xl text-[#666666]'>Community</p>
+        </div>
+        <div>
+          
+        </div>
       </div>
     </div>
   );
