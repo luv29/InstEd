@@ -2,6 +2,7 @@ import { Router } from "express"
 import { 
     forgotPassword,
     forgotPasswordOTP,
+    googleCallback,
     resendOTP,
     resetPassword,
     signIn, 
@@ -15,6 +16,7 @@ const router = Router()
 router.route('/sign-up').post(signUp)
 router.route('/sign-in').post(signIn)
 router.route('/forgot-password').post(forgotPassword)
+router.route('/auth-google').post(googleCallback)
 
 // secured routes
 router.route('/sign-out').post(verifyUser, signOut)
