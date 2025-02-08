@@ -8,7 +8,7 @@ import SignIn from "./SignIn.jsx";
 import SignUp from "./SignUp.jsx";
 import SignupOtp from "./SignupOtp.jsx";
 import SignUpInterests from "./SignUpInterests.jsx";
-import ProfilePage from "./profile.jsx";
+import ProfilePage from "./ProfilePage.jsx";
 
 export {
     HomePage,
