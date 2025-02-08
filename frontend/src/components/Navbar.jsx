@@ -1,8 +1,11 @@
+import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
 
 
 function Navbar() {
+
+  const user = useSelector((state) => state.auth.user);
 
   const navigate = useNavigate();
 
@@ -33,13 +36,13 @@ function Navbar() {
       className: "border-[#FF1F01] border-2 text-black px-4 py-2 rounded-full text-sm font-yatra hover:bg-[#FF1F01] hover:border-2  transition hover:text-[#FFFFFFE0] duration-100 transition-discrete ease-in-out",
       name: 'SIGN IN',
       slug: '/signin',
-      active: true,
+      active: user ? false: true,
     },
     {
       className: "bg-[#FF1F01] border-2 border-[#FF1F01] text-[#FFFFFFE0] px-4 py-2 rounded-full text-sm font-yatra flex hover:bg-white hover:border-2 hover:text-[#FF1F01] hover:border-[#FF1F01] transition duration-100 transition-discrete ease-in-out",
       name: 'SIGN UP',
       slug: '/signup',
-      active: true,
+      active: user ? false : true,
     },
   ]
 

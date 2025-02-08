@@ -49,6 +49,7 @@ export default function SignIn() {
           console.log('Google Authentication is Successfull');
           navigate('/')
         } else {
+          console.log(data)
           console.error('Login Failed', data.message);
           toast({
             title: 'Login Failed',
