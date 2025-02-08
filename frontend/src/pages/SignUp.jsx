@@ -75,6 +75,7 @@ export default function SignUp() {
   const submit = async (data) => {
     setIsSubmitting(true)
     try {
+          console.log("HI")
       const res = await axios.post("/api/user/sign-up", data)
       if (!res.data.success) {
         toast({
@@ -88,8 +89,9 @@ export default function SignUp() {
         navigate('/signup/otp')
       }
     } catch (error) {
+          console.log(error)
       toast({
-        title: error.response.data.message
+        title: error.response.data.message | error.message
       })
     } finally {
       setIsSubmitting(false);
