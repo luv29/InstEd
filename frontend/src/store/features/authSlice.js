@@ -3,11 +3,12 @@ import axios from "axios";
 
 export const verifyUser = createAsyncThunk("auth/verifyUser", async () => {
   try {
-    const response = await axios.get("/api/verify-user", {
+    const response = await axios.get(`/api/user/verify-user`, {
       withCredentials: true, 
     });
-    return response.data;
+    return response.data.data;
   } catch (error) {
+    console.log(error)
     return null; 
   }
 });
