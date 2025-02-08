@@ -13,8 +13,10 @@ const userSchema = mongoose.Schema({
         type: String
     },
     phoneNumber: {
-        type: String,
-        required: [true, 'Please add Phone Number']
+        type: String
+    },
+    email: {
+        type: String
     },
     password: {
         type: String,
@@ -35,6 +37,30 @@ const userSchema = mongoose.Schema({
     },
     canChangePassword: {
         type: Boolean
+    },
+    rank: {
+        type: Number
+    },
+    points: {
+        type: Number
+    },
+    questionsSolved: {
+        type: Number
+    },
+    questionCorrectlySolved: {
+        type: Number
+    },
+    educationLevel: {
+        type: String
+    },
+    bio: {
+        type: String
+    },
+    followers: {
+        type: Number
+    },
+    following: {
+        type: Number
     }
 },
 {
