@@ -59,7 +59,7 @@ function Navbar() {
               <li key={item.name}>
                 <Link
                   to={item.slug}
-                  className="text-sm font-yatra"
+                  className="text-sm hover:text-base transition duration-1000 pr-3 hover:pr-0 transition-discrete ease-in-out font-yatra"
                 >
                   {item.name}
                 </Link>

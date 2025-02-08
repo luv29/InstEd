@@ -24,6 +24,10 @@
   font-family: 'Leaguegothic';
   src: url('./assets/fonts/LeagueGothic-Regular-VariableFont_wdth.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-VariableFont_wdth\,wght.ttf') format('truetype');
+}
 .font-chunkfive {
   font-family: 'Chunkfive', serif;
 }
@@ -43,4 +47,7 @@
 }
 .font-lgothic {
   font-family: 'Leaguegothic',sans-serif;
+}
+.font-roboto {
+  font-family: 'Roboto',sans-serif;
 }

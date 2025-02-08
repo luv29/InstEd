@@ -15,6 +15,7 @@ import {
   SignUp,
   SignupOtp,
   SignUpInterests,
+  Feeds,
   ProfilePage
 } from './pages'
 import { Provider } from "react-redux";
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
         <Route path='/' element={<HomePage />} />
 
         <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/feeds' element={<Feeds />} />
 
         <Route path='/signup' element={<RegisterLayout />} >
           <Route path='' element={<SignUp />} />
