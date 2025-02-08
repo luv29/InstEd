@@ -42,7 +42,8 @@ export default function SignupOtp() {
       });
 
       if (res.data.success) {
-        navigate('/signup/interests');
+        // navigate('/signup/interests');
+        navigate('/');
       }
     } catch (error) {
       toast({
