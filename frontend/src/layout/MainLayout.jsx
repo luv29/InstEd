@@ -4,13 +4,9 @@ import { Navbar } from "@/components"
 
 export default function MainLayout() {
   return (
-    <>
-      <div >
-        <Navbar />
-        <main className="flex-grow w-full">
-          <Outlet />
-        </main>
-      </div>
-    </>
+    <main className="w-screen max-w-screen">
+      <Navbar />
+      <Outlet />
+    </main>
   )
 }
