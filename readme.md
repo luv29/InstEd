@@ -55,14 +55,12 @@ python app.py
 ### 5. Start the Backend Server
 Navigate to the backend directory and run:
 ```sh
-cd ../backend
 npm run server
 ```
 
 ### 6. Start the Frontend Server
 Navigate to the frontend directory and run:
 ```sh
-cd ../frontend
 npm run dev
 ```
 

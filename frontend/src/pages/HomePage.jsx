@@ -22,8 +22,23 @@ import digibijay from "../assets/images/digibijay.jpg";
 import mukul from "../assets/images/mukul.jpg";
 import kunj from "../assets/images/kunj.jpg";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { scroller } from "react-scroll";
 
 export default function HomePage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      scroller.scrollTo(location.state.scrollTo, {
+        smooth: true,
+        duration: 500,
+      });
+    }
+  }, [location]);
+
+  
   const testimonials = [
     {
       quote:

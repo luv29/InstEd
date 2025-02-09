@@ -172,7 +172,7 @@ try {
 export const signUpInterests = asyncHandler(async (req, res) => {
   try {
     const {interests} = req.body
-    let aires = await axios.post(`${process.eventNames.AI_BACKEND_URI}/add-usr`, {
+    let aires = await axios.post(`${process.env.AI_BACKEND_URI}/add-usr`, {
       preferences: interests
     }) 
 
