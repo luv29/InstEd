@@ -11,6 +11,7 @@
     "start": "node src/server.js"
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -20,6 +21,7 @@
     "http": "^0.0.1-security",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.6",
+    "multer": "^1.4.5-lts.1",
     "socket.io": "^4.8.1",
     "twilio": "^5.4.3"
   }

@@ -5,6 +5,9 @@ import { generateToken } from '../utils/token.js';
 import asyncHandler from '../utils/asyncHandler.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { sendMessage } from '../utils/sendMessage.js';
+import { OAuth2Client } from 'google-auth-library';
+import { fetchUserInfo, getOrCreateGoogleUser } from '../utils/googleAuth.js';
+import axios from "axios";
 
 export const signUp = asyncHandler(async (req, res) => {
   const {firstname, lastname, phoneNumber, password} = req.body;
@@ -164,6 +167,39 @@ try {
     res.statusCode = 501
     throw new Error(error.message)
 }
+})
+
+export const signUpInterests = asyncHandler(async (req, res) => {
+  try {
+    const {interests} = req.body
+    let aires = await axios.post(`${process.eventNames.AI_BACKEND_URI}/add-usr`, {
+      preferences: interests
+    }) 
+
+    await User.findByIdAndUpdate(req.user._id, {
+      $set: {
+        aid: aires.id
+      }
+    })
+
+    aires = await axios.get(`${process.env.AI_BACKEND_URI}/train`)
+
+    return res
+      .json(new ApiResponse(201, "User preferences added!"))
+  } catch(error) {
+    res.status(501)
+    throw new Error(error.message)
+  }
+})
+
+export const signUpInfo = asyncHandler(async (req, res) => {
+  try {
+    const {bio, educationLevel} = req.body
+
+  } catch(error) {
+    res.status(501)
+    throw new Error(error.message)
+  }
 })
 
 export const signIn = asyncHandler(async (req, res) => {
@@ -366,11 +402,7 @@ export const signOut = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, "User Logged Out"))
 })
 
-import { OAuth2Client } from 'google-auth-library';
-import { fetchUserInfo, getOrCreateGoogleUser } from '../utils/googleAuth.js';
-
 const googleClient = new OAuth2Client(process.env.VITE_GOOGLE_CLIENT_ID)
-
 export const googleCallback = asyncHandler(async (req, res) => {
   const {token} = req.body;
 

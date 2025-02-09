@@ -8,9 +8,7 @@ import RegisterLayout from "./layout/RegisterLayout.jsx"
 import {
   HomePage,
   Chatroom,
-  Community,
   Leaderboard,
-  Contactus,
   SignIn,
   SignUp,
   SignupOtp,
@@ -39,9 +37,7 @@ const router = createBrowserRouter(
         </Route>
 
         <Route path='/chat' element={<Chatroom />} />
-        <Route path='/community' element={<Community />} />
         <Route path='/leaderboard' element={<Leaderboard />} />
-        <Route path='/contact-us' element={<Contactus />} />
         <Route path='/signin' element={<SignIn />} />
       </Route>
     </>

@@ -60,6 +60,9 @@ const userSchema = mongoose.Schema({
     },
     following: {
         type: Number
+    },
+    aid: {
+        type: Number
     }
 },
 {
