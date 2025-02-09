@@ -1,53 +1,58 @@
 import { useToast } from "@/hooks/use-toast";
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import axios from 'axios'
 
 const ProfilePage = () => {
-
+  const [searchParams] = useSearchParams()
+  const user = searchParams.get('user')
   const { toast } = useToast()
   const navigate = useNavigate()
+  const [userData, setUserData] = useState()
+  const [isLoading, setIsLoading] = useState(true)
 
+  useEffect(()=>{
+    if (!user) {
+      toast({
+        title: "Please Specify user!",
+      })
+      navigate('/')
+      return;
+    }
+    try {
+      const fetchUserData = async () => {
+        setIsLoading(true)
+        const response = await axios.get('/api/user/get-user',{
+          _id: user
+        })
 
-  const userData = {
-    firstname: "Aaryan",
-    lastname: "Singh",
-    username: "@aaryan",
-    educationLevel: "Undergraduate",
-    rank: "First",
-    userexperience: "Novice",
-    doubtssolved: 115,
-    bio: "Sncbshvbbskskskvs Vvjevevhvejhvhdvdvhjev",
-    followers: 25,
-    following: 40,
-    profileImage: '#',
+        if(!response.data.success) {
+          toast({
+            title: response.data.message,
+          })
+          navigate('/')
+          
+        } else {
+          setUserData(response.data.data)
+        }
+      }
+      fetchUserData()
+    } catch (error) { 
+      toast({
+        title: "Server Error!",
+      })
+      console.log(error)
+
+      navigate('/')
+    } finally {
+      setIsLoading(false)
+    }
+  }, [])
+
+  if(isLoading) {
+    return <></>
   }
-  const user = "fl";
-
-  // useEffect(()=>{
-  //   if (!user) {
-  //     toast({
-  //       title: "Please LogIn first!",
-  //     })
-  //     navigate('/')
-  //     return;
-  //   }
-  //   try {
-  //     const fetchUserData = async () => {
-  //       const response = await axios.get('/api/user/get-data', {
-  //         _id: user
-  //       })
-
-  //       if(!response.data.success) {
-  //         toast({
-  //           title: response.data.message,
-  //         })
-  //       }
-  //     }
-  //   } catch (error) {
-      
-  //   }
-  // }, [])
 
   return (
     <div className="h-[91vh] flex flex-col bg-gradient-to-b from-red-500 to-gray-200 overflow-hidden">
@@ -59,7 +64,7 @@ const ProfilePage = () => {
             <div
               className="w-full h-[66%] bg-gray-300 bg-cover bg-center"
               style={{ backgroundImage: `url(${userData.profileImage})` }}
-            >
+              >
             </div>
             <div className="flex flex-col items-center justify-center">
               <p className="font-light text-lg">({userData.username})</p>
@@ -97,7 +102,7 @@ const ProfilePage = () => {
                 <p> {userData.userexperience} </p>
               </div>
               <div className="bg-red-500 border-1 border-black px-3 py-1 rounded-lg text-lg font-bold inline-block">
-                DOUBTS SOLVED: {userData.doubtssolved}
+                DOUBTS SOLVED: {userData.questionsSolved}
               </div>
             </div>
             <div className="p-4 h-full border-1 border-black rounded-lg shadow-md">

@@ -59,10 +59,12 @@ const userSchema = mongoose.Schema({
         type: String
     },
     followers: {
-        type: Number
+        type: Number,
+        default: 0,
     },
     following: {
-        type: Number
+        type: Number,
+        default: 0,
     },
     aid: {
         type: Number

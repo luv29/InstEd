@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import dan from "../assets/images/dan.png";
 import jane from "../assets/images/jane.png";
+import verify from "../assets/images/verify.png";
 import emily from "../assets/images/emily.png";
 import question from "../assets/images/question.jpg";
 import { Search, X, UserCircle, Camera } from "lucide-react";
@@ -110,14 +111,24 @@ const Feeds = () => {
 
         {/* Recommended Leaders */}
         <div className="border-[1px] rounded-xl h-[35%] py-1 px-2 flex flex-col">
-          <p className="font-worksans font-semibold text-base">Recommended Leaders To Follow</p>
-          <div className="flex flex-col gap-2">
-            {[{ name: "Jane Cooper", username: "@Jcooper", img: jane }, { name: "Dan Randall", username: "@dan101", img: dan }, { name: "Emily Shelby", username: "@emil_y", img: emily }].map((user, index) => (
-              <div key={index} className="flex items-center gap-2 w-full">
-                <img src={user.img} className="h-10 w-10 rounded-full" alt={user.name} />
-                <div className="flex flex-col justify-center">
-                  <p className="font-wg font-semibold">{user.name}</p>
-                  <p className="font-wg font-semibold text-[#666666] text-sm">{user.username}</p>
+            <p className="font-worksans font-semibold text-base">Recommended Leaders To Follow</p>
+            <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2 w-full">
+                    <img src={jane} className="h-10 w-10"/>
+                    <div className="flex flex-col justify-center">
+                        <p className="font-wg font-semibold">Jane Cooper</p>
+                        <p className="font-wg font-semibold text-[#666666] text-sm">@Jcooper</p>
+                    </div> 
+                    <button className='font-wg font-semibold bg-[#1FA1FF] ml-auto text-sm text-white border-[0.5px] border-[#1FA1FF] px-2 py-1 rounded-full flex hover:bg-white hover:border-[0.5px] hover:text-[#1FA1FF] hover:border-[#1FA1FF] transition duration-200 ease-in-out'>
+              Follow
+            </button>
+                </div>
+                <div className="flex items-center gap-2 w-full">
+                    <img src={dan} className="h-10 w-10"/>
+                    <div className="flex flex-col justify-center"><p className="font-wg font-semibold">Dan Randall</p><p className="font-wg font-semibold text-[#666666] text-sm">@dan101</p></div>
+                    <button className='font-wg font-semibold bg-[#1FA1FF] ml-auto text-sm text-white border-[0.5px] border-[#1FA1FF] px-2 py-1 rounded-full flex hover:bg-white hover:border-[0.5px] hover:text-[#1FA1FF] hover:border-[#1FA1FF] transition duration-200 ease-in-out'>
+              Follow
+            </button>
                 </div>
                 <button className="font-wg font-semibold bg-[#1FA1FF] ml-auto text-sm text-white border-[0.5px] border-[#1FA1FF] px-2 py-1 rounded-full hover:bg-white hover:text-[#1FA1FF] transition duration-200 ease-in-out">
                   Follow
