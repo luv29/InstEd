@@ -88,6 +88,7 @@ export default function SignIn() {
 
         if(res.data.success) {
             navigate('/')
+            window.location.reload()
         }
     } catch(error) {
         console.log(error)

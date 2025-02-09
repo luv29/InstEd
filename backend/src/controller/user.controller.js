@@ -200,14 +200,14 @@ export const signUpInfo = asyncHandler(async (req, res) => {
     if(!bio || !educationLevel) {
       throw new Error("All fields are required!")
     }
-  
-    const profileImagePath = req.file.path
+    console.log(req.file)
+    const profileImagePath = req.file?.path
     if (!profileImagePath) {
         res.status(400);
         throw new Error('Profile Image is required!');
     }
 
-    const profileImage = await uploadOnCloudinary(coverImageLocalPath);
+    const profileImage = await uploadOnCloudinary(profileImagePath);
 
     await User.findByIdAndUpdate(req.user._id, {
       $set: {
