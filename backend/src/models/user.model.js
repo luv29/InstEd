@@ -52,6 +52,9 @@ const userSchema = mongoose.Schema({
     educationLevel: {
         type: String
     },
+    profileImage: {
+        type: String
+    }
     bio: {
         type: String
     },

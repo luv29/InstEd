@@ -8,6 +8,7 @@ import { sendMessage } from '../utils/sendMessage.js';
 import { OAuth2Client } from 'google-auth-library';
 import { fetchUserInfo, getOrCreateGoogleUser } from '../utils/googleAuth.js';
 import axios from "axios";
+import { uploadOnCloudinary } from "../utils/cloudinary.js";
 
 export const signUp = asyncHandler(async (req, res) => {
   const {firstname, lastname, phoneNumber, password} = req.body;
@@ -196,6 +197,29 @@ export const signUpInfo = asyncHandler(async (req, res) => {
   try {
     const {bio, educationLevel} = req.body
 
+    if(!bio || !educationLevel) {
+      throw new Error("All fields are required!")
+    }
+  
+    const profileImagePath = req.file.path
+    if (!profileImagePath) {
+        res.status(400);
+        throw new Error('Profile Image is required!');
+    }
+
+    const profileImage = await uploadOnCloudinary(coverImageLocalPath);
+
+    await User.findByIdAndUpdate(req.user._id, {
+      $set: {
+        profileImage: profileImage.url,
+        bio,
+        educationLevel
+      }
+    })
+
+    return res
+    .status(201)
+    .json(new ApiResponse(201, "User info saved"))
   } catch(error) {
     res.status(501)
     throw new Error(error.message)
