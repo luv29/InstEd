@@ -1,50 +1,53 @@
 import { useToast } from "@/hooks/use-toast";
-import React, { useState } from "react";
+import React from "react";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import axios from 'axios'
 
 const ProfilePage = () => {
-  const user = useSelector((state) => state.auth.user);
+
   const { toast } = useToast()
   const navigate = useNavigate()
-  const [userData, setUserData] = useState()
-  const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(()=>{
-    // if (!user) {
-    //   toast({
-    //     title: "Please LogIn first!",
-    //   })
-    //   navigate('/')
-    //   return;
-    // }
-    try {
-      const fetchUserData = async () => {
-        setIsLoading(true)
-        const response = await axios.get('/api/user/get-user',)
 
-        if(!response.data.success) {
-          toast({
-            title: response.data.message,
-          })
-        } else {
-          setUserData(response.data.data)
-        }
-      }
-      console.log("Hi")
-      fetchUserData()
-    } catch (error) { 
-      console.log(error)
-    } finally {
-      setIsLoading(false)
-    }
-  }, [])
-
-  if(isLoading) {
-    return <></>
+  const userData = {
+    firstname: "Aaryan",
+    lastname: "Singh",
+    username: "@aaryan",
+    educationLevel: "Undergraduate",
+    rank: "First",
+    userexperience: "Novice",
+    doubtssolved: 115,
+    bio: "Sncbshvbbskskskvs Vvjevevhvejhvhdvdvhjev",
+    followers: 25,
+    following: 40,
+    profileImage: '#',
   }
+  const user = "fl";
+
+  // useEffect(()=>{
+  //   if (!user) {
+  //     toast({
+  //       title: "Please LogIn first!",
+  //     })
+  //     navigate('/')
+  //     return;
+  //   }
+  //   try {
+  //     const fetchUserData = async () => {
+  //       const response = await axios.get('/api/user/get-data', {
+  //         _id: user
+  //       })
+
+  //       if(!response.data.success) {
+  //         toast({
+  //           title: response.data.message,
+  //         })
+  //       }
+  //     }
+  //   } catch (error) {
+      
+  //   }
+  // }, [])
 
   return (
     <div className="h-[91vh] flex flex-col bg-gradient-to-b from-red-500 to-gray-200 overflow-hidden">
