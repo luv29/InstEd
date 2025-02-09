@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { useToast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 
 const SignUpInfo = () => {
   const { register, handleSubmit } = useForm();
   const [profileImage, setProfileImage] = useState(null);
-  // const { toast } = useToast()
-  // const navigate = useNavigate()
+  const { toast } = useToast()
+  const navigate = useNavigate()
 
 
   const handleImageChange = (e) => {
@@ -28,7 +30,17 @@ const SignUpInfo = () => {
           "Content-Type": "multipart/form-data",
         },
       });
-      console.log(response.data);
+      if(response.data.success) {
+        toast({
+          title: "Interest added Successfully!",
+        })
+        navigate('/')
+      } else {
+        toast({
+          title: response.data.message,
+        })
+        navigate('/')
+      }
     } catch (error) {
       console.error("Error:", error);
     }
