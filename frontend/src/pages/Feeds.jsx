@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import dan from "../assets/images/dan.png";
 import jane from "../assets/images/jane.png";
 import emily from "../assets/images/emily.png";
-import { Search, X } from "lucide-react";
+import question from "../assets/images/question.jpg";
+import { Search, X, UserCircle, Camera } from "lucide-react";
 
 const questions = [
   {
@@ -37,21 +38,60 @@ const Feeds = () => {
   return (
     <div className="bg-[#EBEBEB] flex w-screen h-[91.2vh]">
       <div className="h-full bg-white w-[15%]"></div>
+      
+      {/* Middle Section */}
       <div className="h-full bg-[#EBEBEB] w-[60%] flex flex-col p-5 gap-6.5">
-        <div className="h-[30%] w-full bg-white rounded-[10.5px] p-4">
-          <div className="flex items-center gap-3 border-b pb-3">
-            <div className="w-10 h-10 rounded-full bg-gray-300"></div>
+        {/* Question Input */}
+        <div className="h-[25%] w-full bg-white rounded-[10.5px] p-4 shadow-sm">
+          <div className="flex items-center justify-between border-b pb-1">
+            <div className="flex items-center gap-2 text-gray-700 font-semibold w-full h-[90%]">
+              <UserCircle className="w-5 h-5" />
+              Make Post
+              <span className="text-gray-400">|</span>
+              <Camera className="w-5 h-5" />
+              Photo / Video
+            </div>
+          </div>
+          <div className="flex items-center gap-3 mt-3">
+            <img src="https://randomuser.me/api/portraits/men/4.jpg" className="w-10 h-10 rounded-full" alt="User" />
             <input
               type="text"
               placeholder="What is your question?"
-              className="flex-grow bg-transparent outline-none text-gray-700"
+              className="flex-grow bg-transparent outline-none text-wrap text-gray-700"
             />
-            <button className="bg-red-500 text-white text-sm px-4 py-1 rounded-full">Post</button>
+            <button className="bg-red-500 text-white text-sm border-[0.5px] border-red-500 hover:bg-white hover:border-[0.5px] hover:text-red-500 transition duration-200 ease-in-out px-4 py-1 rounded-full">Post</button>
           </div>
         </div>
-        <div className="h-[67%] w-full bg-white rounded-[10.5px]"></div>
+
+        {/* Post Feeds */}
+        <div className="h-[70%] w-full bg-white rounded-[10.5px] p-4 overflow-auto">
+          {questions.map((q, index) => (
+            <div key={index} className="bg-white p-4 rounded-lg shadow-sm mb-4 border-1">
+              {/* Header */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <img src={q.image} alt={q.name} className="w-10 h-10 rounded-full object-cover" />
+                  <div className="ml-3">
+                    <h4 className="font-semibold">{q.name}</h4>
+                    <p className="text-gray-500 text-sm">@user_{index} • 2h</p>
+                  </div>
+                </div>
+                <div className="flex items-center bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  {q.points}
+                </div>
+              </div>
+              
+              {/* Content */}
+              <p className="text-gray-700 mt-2">{q.question}</p>
+              <img src={question}/>
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/* Right Sidebar */}
       <div className="h-full bg-white w-[25%] p-5 flex flex-col gap-y-5">
+        {/* Search Bar */}
         <div className="w-full border-[1px] rounded-full py-2 px-3 flex items-center">
           <Search className="text-gray-500 w-5 h-5 mr-2" />
           <input
@@ -67,6 +107,8 @@ const Feeds = () => {
             </button>
           )}
         </div>
+
+        {/* Recommended Leaders */}
         <div className="border-[1px] rounded-xl h-[35%] py-1 px-2 flex flex-col">
           <p className="font-worksans font-semibold text-base">Recommended Leaders To Follow</p>
           <div className="flex flex-col gap-2">
@@ -83,8 +125,10 @@ const Feeds = () => {
               </div>
             ))}
           </div>
-          <p className="font-worksans text-xs underline text-[#FF1F01]">Show more</p>
+          <p className="font-worksans text-xs underline text-[#FF1F01] cursor-pointer">Show more</p>
         </div>
+
+        {/* Viral Questions */}
         <div className="border-[1px] rounded-xl h-[60%] py-2 px-3 flex flex-col overflow-auto">
           <p className="font-worksans font-semibold text-base mb-2">Viral Questions</p>
           {questions.map((q, index) => (
