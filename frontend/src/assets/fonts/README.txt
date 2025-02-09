@@ -1,73 +1,30 @@
-Roboto Variable Font
-====================
+Wittgenstein Variable Font
+==========================
 
-This download contains Roboto as both variable fonts and static fonts.
+This download contains Wittgenstein as both variable fonts and static fonts.
 
-Roboto is a variable font with these axes:
-  wdth
+Wittgenstein is a variable font with this axis:
   wght
 
 This means all the styles are contained in these files:
-  Roboto-VariableFont_wdth,wght.ttf
-  Roboto-Italic-VariableFont_wdth,wght.ttf
+  Wittgenstein-VariableFont_wght.ttf
+  Wittgenstein-Italic-VariableFont_wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Roboto:
-  static/Roboto_Condensed-Thin.ttf
-  static/Roboto_Condensed-ExtraLight.ttf
-  static/Roboto_Condensed-Light.ttf
-  static/Roboto_Condensed-Regular.ttf
-  static/Roboto_Condensed-Medium.ttf
-  static/Roboto_Condensed-SemiBold.ttf
-  static/Roboto_Condensed-Bold.ttf
-  static/Roboto_Condensed-ExtraBold.ttf
-  static/Roboto_Condensed-Black.ttf
-  static/Roboto_SemiCondensed-Thin.ttf
-  static/Roboto_SemiCondensed-ExtraLight.ttf
-  static/Roboto_SemiCondensed-Light.ttf
-  static/Roboto_SemiCondensed-Regular.ttf
-  static/Roboto_SemiCondensed-Medium.ttf
-  static/Roboto_SemiCondensed-SemiBold.ttf
-  static/Roboto_SemiCondensed-Bold.ttf
-  static/Roboto_SemiCondensed-ExtraBold.ttf
-  static/Roboto_SemiCondensed-Black.ttf
-  static/Roboto-Thin.ttf
-  static/Roboto-ExtraLight.ttf
-  static/Roboto-Light.ttf
-  static/Roboto-Regular.ttf
-  static/Roboto-Medium.ttf
-  static/Roboto-SemiBold.ttf
-  static/Roboto-Bold.ttf
-  static/Roboto-ExtraBold.ttf
-  static/Roboto-Black.ttf
-  static/Roboto_Condensed-ThinItalic.ttf
-  static/Roboto_Condensed-ExtraLightItalic.ttf
-  static/Roboto_Condensed-LightItalic.ttf
-  static/Roboto_Condensed-Italic.ttf
-  static/Roboto_Condensed-MediumItalic.ttf
-  static/Roboto_Condensed-SemiBoldItalic.ttf
-  static/Roboto_Condensed-BoldItalic.ttf
-  static/Roboto_Condensed-ExtraBoldItalic.ttf
-  static/Roboto_Condensed-BlackItalic.ttf
-  static/Roboto_SemiCondensed-ThinItalic.ttf
-  static/Roboto_SemiCondensed-ExtraLightItalic.ttf
-  static/Roboto_SemiCondensed-LightItalic.ttf
-  static/Roboto_SemiCondensed-Italic.ttf
-  static/Roboto_SemiCondensed-MediumItalic.ttf
-  static/Roboto_SemiCondensed-SemiBoldItalic.ttf
-  static/Roboto_SemiCondensed-BoldItalic.ttf
-  static/Roboto_SemiCondensed-ExtraBoldItalic.ttf
-  static/Roboto_SemiCondensed-BlackItalic.ttf
-  static/Roboto-ThinItalic.ttf
-  static/Roboto-ExtraLightItalic.ttf
-  static/Roboto-LightItalic.ttf
-  static/Roboto-Italic.ttf
-  static/Roboto-MediumItalic.ttf
-  static/Roboto-SemiBoldItalic.ttf
-  static/Roboto-BoldItalic.ttf
-  static/Roboto-ExtraBoldItalic.ttf
-  static/Roboto-BlackItalic.ttf
+in those cases you can use the static font files for Wittgenstein:
+  static/Wittgenstein-Regular.ttf
+  static/Wittgenstein-Medium.ttf
+  static/Wittgenstein-SemiBold.ttf
+  static/Wittgenstein-Bold.ttf
+  static/Wittgenstein-ExtraBold.ttf
+  static/Wittgenstein-Black.ttf
+  static/Wittgenstein-Italic.ttf
+  static/Wittgenstein-MediumItalic.ttf
+  static/Wittgenstein-SemiBoldItalic.ttf
+  static/Wittgenstein-BoldItalic.ttf
+  static/Wittgenstein-ExtraBoldItalic.ttf
+  static/Wittgenstein-BlackItalic.ttf
 
 Get started
 -----------

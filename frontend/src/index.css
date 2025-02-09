@@ -28,6 +28,10 @@
   font-family: 'Roboto';
   src: url('./assets/fonts/Roboto-VariableFont_wdth\,wght.ttf') format('truetype');
 }
+@font-face {
+  font-family: 'Wittgenstein';
+  src: url('./assets/fonts/Wittgenstein-VariableFont_wght.ttf') format('truetype');
+}
 .font-chunkfive {
   font-family: 'Chunkfive', serif;
 }
@@ -50,4 +54,7 @@
 }
 .font-roboto {
   font-family: 'Roboto',sans-serif;
+}
+.font-wg {
+  font-family: 'Wittgenstein',sans-serif;
 }
