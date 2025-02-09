@@ -484,3 +484,14 @@ export const verifyUserRedux = asyncHandler(async (req, res) => {
       throw new Error(error?.message || "Invalid Access Token");    
   }
 })
+
+export const getUser = asyncHandler(async (req, res) => {
+  try {
+    return res
+      .status(201)
+      .json(201, "Usr fetched.", req.user)
+  } catch(error) {
+    res.status(401)
+    throw new Error(error?.message || "Invalid Access Token");
+  }
+})

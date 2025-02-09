@@ -2,6 +2,7 @@ import { Router } from "express"
 import { 
     forgotPassword,
     forgotPasswordOTP,
+    getUser,
     googleCallback,
     resendOTP,
     resetPassword,
@@ -34,5 +35,6 @@ router.route('/sign-up/info').post(
 router.route('/resend-otp').post(verifyUser, resendOTP)
 router.route('/forgot-password/verify-otp').post(verifyUser, forgotPasswordOTP)
 router.route('/forgot-password/reset').post(verifyUser, resetPassword)
+router.route('/get-user').get(verifyUser, getUser)
 
 export default router
