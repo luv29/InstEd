@@ -8,15 +8,14 @@ import RegisterLayout from "./layout/RegisterLayout.jsx"
 import {
   HomePage,
   Chatroom,
-  Community,
   Leaderboard,
-  Contactus,
   SignIn,
   SignUp,
   SignupOtp,
   SignUpInterests,
   Feeds,
-  ProfilePage
+  ProfilePage,
+  SignUpInfo
 } from './pages'
 import { Provider } from "react-redux";
 import store from './store'
@@ -34,12 +33,11 @@ const router = createBrowserRouter(
           <Route path='' element={<SignUp />} />
           <Route path='otp' element={<SignupOtp />} />
           <Route path='interests' element={<SignUpInterests />} />
+          <Route path='info' element={<SignUpInfo />} />
         </Route>
 
         <Route path='/chat' element={<Chatroom />} />
-        <Route path='/community' element={<Community />} />
         <Route path='/leaderboard' element={<Leaderboard />} />
-        <Route path='/contact-us' element={<Contactus />} />
         <Route path='/signin' element={<SignIn />} />
       </Route>
     </>

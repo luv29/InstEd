@@ -75,6 +75,7 @@ export default function HomePage() {
       src: mukul,
     },
   ];
+
   return (
     <div>
       <div className='gradient bg-gradient-to-l to-[#FF1F01] from-[#FFC700] w-screen h-screen'>
@@ -139,7 +140,7 @@ export default function HomePage() {
         </motion.div>
       </div>
 
-      <div className='w-screen h-screen gradient bg-gradient-to-l to-[#FF1F01] from-[#FFC700] pt-0 xl:pt-4 flex flex-col items-center px-14 xl:px-19 gap-1 md:gap-3 xl:gap-7'>
+      <div className='w-screen h-screen gradient bg-gradient-to-l to-[#FF1F01] from-[#FFC700] pt-0 xl:pt-4 flex flex-col items-center px-14 xl:px-19 gap-1 md:gap-3 xl:gap-7' id="about">
         <motion.p 
           className='font-lgothic text-7xl'
           initial={{ opacity: 0, y: 50 }}
@@ -185,7 +186,7 @@ We’ve combined the best aspects of social networking, gamification, and real-t
       <div className='w-screen gradient bg-gradient-to-l to-[#FF1F01] from-[#FFC700]'>
         <img src={rectangle} className='w-200'/>
       </div>
-      <div className='w-screen h-[89vh] gradient bg-white flex justify-center items-center px-8'>
+      <div id='community' className='w-screen h-[89vh] gradient bg-white flex justify-center items-center px-8'>
         <div className='w-[50%] p-8 flex flex-col justify-center items-center gap-5 '>
           
           <motion.p 
@@ -246,7 +247,7 @@ We’ve combined the best aspects of social networking, gamification, and real-t
       </div>
 
       <div className='w-screen h-screen gradient bg-gradient-to-l to-[#FF1F01] from-[#FFC700] flex-col justify-center items-center'>
-        <div>
+        <div id="contact-us">
          <AnimatedTestimonials testimonials={testimonials} />
         </div>      
         <footer className="flex items-center justify-center font-outfit  text-white p-10">
