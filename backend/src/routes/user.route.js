@@ -9,15 +9,16 @@ import {
     signOut, 
     signUp, 
     signUpVerifyOTP,
-    verifyUser
+    verifyUserRedux
 } from "../controller/user.controller.js"
+import { verifyUser } from "../middlewares/auth.middleware.js"
 
 const router = Router()
 router.route('/sign-up').post(signUp)
 router.route('/sign-in').post(signIn)
 router.route('/forgot-password').post(forgotPassword)
 router.route('/auth-google').post(googleCallback)
-router.route('/verify-user').get(verifyUser)
+router.route('/verify-user').get(verifyUserRedux)
 
 // secured routes
 router.route('/sign-out').post(verifyUser, signOut)

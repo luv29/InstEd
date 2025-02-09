@@ -9,6 +9,7 @@ import SignupOtp from "./SignupOtp.jsx";
 import SignUpInterests from "./SignUpInterests.jsx";
 import ProfilePage from "./ProfilePage.jsx";
 import Feeds from "./Feeds.jsx";
+import SignUpInfo from "./SignUpInfo.jsx";
 export {
     HomePage,
     Chatroom,
@@ -21,4 +22,5 @@ export {
     SignUpInterests,
     ProfilePage,
     Feeds,
+    SignUpInfo,
 }

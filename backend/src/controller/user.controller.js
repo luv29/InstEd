@@ -61,8 +61,8 @@ export const signUp = asyncHandler(async (req, res) => {
   }
   
   return res
-  .status(201)
   .cookie("token", token, options)
+  .status(201)
   .json(new ApiResponse(201, "User Registered Successfully. Please verify your phone number", userExists))
 })
 
@@ -70,6 +70,8 @@ export const signUpVerifyOTP = asyncHandler(async (req, res) => {
   try {
     const { otp } = req.body;
     const user = req.user
+
+    console.log(user)
     
     if (!user) {
         res.status(401)
@@ -118,8 +120,8 @@ export const signUpVerifyOTP = asyncHandler(async (req, res) => {
       }
   
       return res
-        .status(201)
         .clearCookie("token", options)
+        .status(201)
         .json(new ApiResponse(201, "User verified successfully", newUser))
     } catch (error) {
       res.status(501)
@@ -132,8 +134,8 @@ try {
     const user = req.user
 
     if (!user) {
-    res.status(401)
-    throw new Error("Unauthorized request")
+      res.status(401)
+      throw new Error("Unauthorized request")
     }
 
     const verifyCode = Math.floor(100000 + Math.random() * 900000).toString()
@@ -159,7 +161,7 @@ try {
     .status(201)
     .json(new ApiResponse(201, "OTP is sent again.", newUser))
 } catch (error) {
-    res.status(501)
+    res.statusCode = 501
     throw new Error(error.message)
 }
 })
@@ -193,8 +195,8 @@ export const signIn = asyncHandler(async (req, res) => {
       }
   
       return res
-        .status(201)
         .cookie("token", token, options)
+        .status(201)
         .json(new ApiResponse(201, "User logged in successfully.", user))
     } else {
       return res.json(new ApiResponse(401, 'Invalid username or password '))
@@ -403,7 +405,7 @@ export const googleCallback = asyncHandler(async (req, res) => {
   }
 })
 
-export const verifyUser = asyncHandler(async (req, res) => {
+export const verifyUserRedux = asyncHandler(async (req, res) => {
   try {
       const token = req.cookies?.token
   

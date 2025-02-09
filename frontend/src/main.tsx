@@ -16,7 +16,8 @@ import {
   SignupOtp,
   SignUpInterests,
   Feeds,
-  ProfilePage
+  ProfilePage,
+  SignUpInfo
 } from './pages'
 import { Provider } from "react-redux";
 import store from './store'
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
           <Route path='' element={<SignUp />} />
           <Route path='otp' element={<SignupOtp />} />
           <Route path='interests' element={<SignUpInterests />} />
+          <Route path='info' element={<SignUpInfo />} />
         </Route>
 
         <Route path='/chat' element={<Chatroom />} />

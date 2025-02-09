@@ -32,6 +32,7 @@ export default function SignupOtp() {
   const verify = async (data) => {
     setIsSubmitting(true);
     try {
+      console.log(data)
       const res = await axios.post('/api/user/sign-up/verify-otp', {
         otp: data.otp,
       });
