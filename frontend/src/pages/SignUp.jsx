@@ -47,7 +47,7 @@ export default function SignUp() {
             title: 'Logged in Successfully!'
           })
           console.log('Google Authentication is Successfull');
-          navigate('/')
+          navigate('/signup/interests')
         } else {
           console.error('Login Failed', data.message);
           toast({

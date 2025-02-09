@@ -43,8 +43,8 @@ export default function SignupOtp() {
       });
 
       if (res.data.success) {
-        // navigate('/signup/interests');
-        navigate('/');
+        navigate('/signup/interests');
+        // navigate('/');
       }
     } catch (error) {
       toast({
