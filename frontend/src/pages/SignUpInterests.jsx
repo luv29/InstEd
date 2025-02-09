@@ -29,6 +29,7 @@ function SignUpInterests() {
   const [rating, setRating] = useState(0);
   const { toast } = useToast()
   const navigate = useNavigate()
+  const [isLoading, setIsLoading] = useState(false);
 
 
   const handleAddInterest = () => {
@@ -63,6 +64,7 @@ function SignUpInterests() {
     });
 
     try {
+      setIsLoading(true)
       const response = await axios.post('/api/user/sign-up/interests', { interests: interestArray });
       if(response.data.success) {
         toast({
@@ -76,7 +78,12 @@ function SignUpInterests() {
         navigate('/')
       }
     } catch (error) {
+      toast({
+        title: "Error Adding Intereset"
+      })
       console.error("Error submitting interests:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -144,7 +151,7 @@ function SignUpInterests() {
       <button
         onClick={handleSubmit}
         className='mt-4 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600'>
-        Submit
+        {!isLoading ? <>Submit</> : <>Please Wait....</>}
       </button>
     </div>
   );
